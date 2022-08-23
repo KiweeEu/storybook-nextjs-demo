@@ -1,12 +1,24 @@
 .main {
   min-height: 100vh;
+  max-width: 1400px;
+  margin: auto;
   padding: 4rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  .productsGrid {
+    display: flex;
+    flex-wrap: wrap;
+
+    .productTile {
+      width: 25%;
+    }
+  }
 }
+
 
 .footer {
   display: flex;

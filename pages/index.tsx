@@ -1,8 +1,9 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.scss'
 import { Header } from "../components/Header";
+import { Product } from "../components/Product";
 
 const Home: NextPage = () => {
   return (
@@ -15,6 +16,19 @@ const Home: NextPage = () => {
 
       <Header />
       <main className={styles.main}>
+        <div className={styles.productsGrid}>
+          {Array.from(Array(12), (e, i) => {
+            return <div className={styles.productTile}>
+              <Product
+                  name="Sunglasses"
+                  shortDescription="Sunglasses are the best for protecting your eyes from the sun on a sunny day"
+                  price={139.99}
+                  discountPrice={129.99}
+                  image='/product-image.jpeg'
+              />
+            </div>
+          })}
+        </div>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
