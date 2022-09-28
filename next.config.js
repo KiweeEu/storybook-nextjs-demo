@@ -12,5 +12,8 @@ module.exports = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
     prependData: `@import "variables.scss";`
-  }
+  },
+  images: {
+    domains: ['dummyjson.com'],
+  },
 }

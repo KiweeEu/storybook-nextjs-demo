@@ -1,0 +1,14 @@
+.form {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+
+  .emailInput {
+      margin-left: 10px;
+  }
+
+  button {
+    margin-top: 10px;
+    width: fit-content;
+  }
+}

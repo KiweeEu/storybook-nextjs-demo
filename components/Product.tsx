@@ -17,7 +17,7 @@ type Props = {
 
 export const Product = ({ name, shortDescription, price, image, isNew, isBestseller, discountPrice }: Props) => {
     return (
-    <div className={styles.product}>
+    <div className={styles.product} data-testid="productBox">
         <Image
             src={image}
             className={styles.product__image}
@@ -33,8 +33,8 @@ export const Product = ({ name, shortDescription, price, image, isNew, isBestsel
                 </div>
             </div>
             <p>{ shortDescription }</p>
-            {isNew && <div className={`${styles.product__badge} ${styles['product__badge--new']}`}>NEW</div>}
-            {isBestseller && <div className={`${styles.product__badge} ${styles['product__badge--bestseller']}`}>BESTSELLER</div>}
+            {isNew && <div className={`${styles.product__badge} ${styles['product__badge--new']}`} data-testid="new-badge">NEW</div>}
+            {isBestseller && <div className={`${styles.product__badge} ${styles['product__badge--bestseller']}`} data-testid="bestseller-badge">BESTSELLER</div>}
         </div>
     </div>
     );

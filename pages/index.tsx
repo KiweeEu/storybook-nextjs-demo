@@ -4,6 +4,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.scss'
 import { Header } from "../components/Header";
 import { Product } from "../components/Product";
+import { products } from "../public/products";
 
 const Home: NextPage = () => {
   return (
@@ -17,6 +18,17 @@ const Home: NextPage = () => {
       <Header />
       <main className={styles.main}>
         <div className={styles.productsGrid}>
+          {products.map((product) => {
+            return <div className={styles.productTile} key={product.id}>
+              <Product
+                  name={product.title}
+                  shortDescription={product.description}
+                  price={product.price}
+                  discountPrice={product.discountPercentage > 17 ? Math.round(product.price - (product.discountPercentage / 100) * product.price) : undefined }
+                  image={product.thumbnail}
+              />
+            </div>
+          })}
           {Array.from(Array(12), (e, i) => {
             return <div className={styles.productTile}>
               <Product

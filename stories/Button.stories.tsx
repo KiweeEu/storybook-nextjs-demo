@@ -3,26 +3,36 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Button } from '../components/Button';
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: 'Example/Button',
   component: Button,
+    parameters: {
+        docs: {
+            description: {
+                component: 'This is button component documentation',
+            },
+        },
+    },
 } as ComponentMeta<typeof Button>;
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
-  primary: true,
+  mode: 'primary',
   label: 'Button',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  primary: false,
+  mode: 'secondary',
   label: 'Button',
+};
+
+export const Success = Template.bind({});
+Success.args = {
+    mode: 'success',
+    label: 'Button',
 };
 
 export const Large = Template.bind({});
