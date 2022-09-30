@@ -1,7 +1,4 @@
-// const initStoryshots = require('@storybook/addon-storyshots');
 const { injectAxe, checkA11y } = require('axe-playwright');
-
-// initStoryshots();
 
 /*
 * See https://storybook.js.org/docs/react/writing-tests/test-runner#test-hook-api-experimental
@@ -13,10 +10,7 @@ module.exports = {
    },
    async postRender(page) {
       await checkA11y(page, '#root', {
-         detailedReport: false,
-         // detailedReportOptions: {
-         //    html: true,
-         // },
+         detailedReport: true,
       });
    },
 };
