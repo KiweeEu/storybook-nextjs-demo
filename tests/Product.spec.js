@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import { BestsellerProduct} from '../stories/Product.stories';
+import { BestsellerProduct } from '../stories/Product.stories';
 
 test('loads and displays greeting', async () => {
    render(<BestsellerProduct {...BestsellerProduct.args} />)

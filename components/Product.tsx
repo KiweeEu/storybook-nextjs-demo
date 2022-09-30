@@ -15,7 +15,7 @@ type Props = {
     isNew?: boolean;
 }
 
-export const Product = ({ name, shortDescription, price, image, isNew, isBestseller, discountPrice }: Props) => {
+export const Product = ({ name, shortDescription, price, image, isNew, isBestseller, discountPrice = undefined }: Props) => {
     return (
     <div className={styles.product} data-testid="productBox">
         <Image
